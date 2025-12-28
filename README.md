@@ -21,6 +21,11 @@ The final model achieves **>95% validation accuracy**, exceeding the target perf
 
 ---
 
+## Project Structure
+
+- `rottenfruit-output.ipynb` — End-to-end training, validation, and evaluation pipeline
+- `utils.py` — Helper functions for training and validation loops
+- `image/` — Example images used for documentation and visualization
 ## Problem Statement
 Accurately identifying food freshness is a practical computer vision problem with applications in:
 - Food quality control

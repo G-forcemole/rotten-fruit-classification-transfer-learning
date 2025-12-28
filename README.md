@@ -63,3 +63,35 @@ data/
     │   └── rottenoranges/
     └── valid/
         └── (same structure as train)
+```
+## 🔄 Data Augmentation
+
+To improve generalization without distorting color cues critical to fruit freshness, the following augmentations were applied:
+
+- Random resized crops
+- Horizontal flips
+- Mild rotations
+- Normalization using ImageNet statistics
+
+(Color jitter was intentionally avoided.)
+
+---
+
+## ⚙️ Training Results
+
+- **Validation Accuracy:** ~96%
+- **Training Stability:** Consistent convergence
+- **Overfitting:** Minimal due to frozen base + augmentation
+
+Fine-tuning the unfrozen backbone with a very low learning rate further improved performance.
+
+---
+
+## 🚀 Hardware & Performance
+
+- Training was performed using **GPU acceleration (CUDA)**.
+- The code automatically falls back to CPU if a GPU is unavailable.
+- GPU is **recommended but not required** to run inference or inspect the notebook.
+
+```python
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
